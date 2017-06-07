@@ -1,0 +1,20 @@
+.triangle-right {
+    display: inline-block;
+    vertical-align: bottom;
+    width:0;
+    height:0;
+    border-top:28px solid transparent;
+    border-bottom: 28px solid transparent;
+    border-left: 28px solid #3A5FCD;
+}
+.triangle-right-special {
+     display: inline-block;
+     vertical-align: bottom;
+     width: 0;
+     height: 0;
+     border-top: 28px solid transparent;
+     border-bottom: 28px solid transparent;
+     border-left: 28px solid #87CEEB;
+     padding-left: 130px;
+     background: #3A5FCD;
+}

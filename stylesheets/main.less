@@ -1,0 +1,246 @@
+body {
+  padding: 0;
+  margin: 0;
+}
+
+.content-wrapper {
+  background-color: #ecf0f5;
+  z-index: 800;
+  overflow: hidden;
+  min-height: 600px
+}
+
+.menuBox {
+  cursor: pointer;
+  text-align: -webkit-center;
+  .menuTest {
+    padding: 10px 0;
+    color: white;
+    font-weight: 600;
+    font-size: 15px;;
+  }
+  img {
+    border-radius: 10px;
+    width: 100px;
+    height: 100px;
+    display: inline-block;
+  }
+}
+
+.menuBox img:hover {
+  -webkit-box-shadow: 3px 3px 3px;
+  -moz-box-shadow: 3px 3px 3px;
+  box-shadow: 3px 3px 3px;
+}
+
+/*考试页面*/
+.testNav {
+  padding: 10px;
+  overflow: hidden;
+  background: #87CEEB;
+
+  border-bottom: 5px #1296db solid;
+  img {
+    width: 20px;
+  }
+}
+
+.testContent {
+  background: #ecf0f5;
+  p {
+    padding: 10px;
+    background: #bfbfbf;
+  }
+  .question, .answerChoice {
+    padding: 50px 100px 100px 30px;
+    font-size: 20px;
+  }
+  hr {
+    color: #bfbfbf;
+    border: solid 1px;
+  }
+}
+
+.testMessage {
+  height: 603px;
+  background: #C6E2FF;
+
+  h5 {
+    background: #87CEEB;
+    padding: 5px;
+    font-family: 黑体;
+    font-weight: bold;
+
+  }
+  h3 {
+    background: #1296db;
+    img {
+      width: 23px;
+      background: #1296db;
+    }
+  }
+
+}
+
+.questionList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  a {
+    display: inline-block;
+    padding: 0 5px;
+    margin: 5px;
+    background: white;
+    cursor: pointer;
+    font-size: 12px;
+  }
+  .testCurrent {
+    background: greenyellow;
+  }
+
+  .testOld {
+    background: #71C671;
+  }
+
+  .testCheck {
+    background: #EE7621;
+  }
+  .testNext {
+    background: white;
+  }
+}
+
+.bottomState {
+  background: cornflowerblue;
+  position: fixed;
+  bottom: 0;
+  height: 57px;
+  padding: 15px;
+  overflow: hidden;
+  .stateBox {
+    span {
+      display: inline-block;
+      background: red;
+      width: 20px;
+      height: 12px;
+    }
+  }
+}
+
+.testFooter {
+  display: flex;
+  position: fixed;
+  padding: 15px 0;
+  width: 100%;
+  background: #bfbfbf;
+  left: 0;
+  color: white;
+  bottom: 0;
+  justify-content: flex-start;
+  button {
+    margin: 0 6px;
+  }
+}
+
+.testFooter > :nth-child(1) {
+  margin: 0 100px;
+}
+
+.personMes {
+  color: white;
+  position: absolute;
+  right: 50px;
+  top: 10px;
+
+}
+
+.versionMes {
+  position: absolute;
+  right: 50px;
+  top: 80px;
+  color: #FFFF00;
+  li {
+    list-style: none;
+    display: inline-block;
+  }
+}
+
+/*成绩查询 result*/
+.searchChoice {
+  cursor: pointer;
+  display: inline-block;
+  .choiceBox {
+    display: inline-block;
+    width: 160px;
+    font-size: 16px;
+    padding: 15px 0 15px 30px;
+    background: #87CEEB;
+    border: 2px solid white;
+    border-right: none;
+  }
+}
+
+.resultList {
+  background: #87CEEB;
+  HEIGHT: 400px;
+  .resultSearch {
+    padding: 30px;
+    display: flex;
+    justify-content: space-around;
+    label {
+      width: 120px;
+      letter-spacing: 5px;
+      font-size: 20px;
+      line-height: 30px;
+      //font-family: youyuan;
+      -webkit-text-fill-color: white; /*文字的填充色*/
+      -webkit-text-stroke: 1px #3A5FCD; /*描边的像素，也就是粗细，这里指定是2像素的黑色边框*/
+      color: white;
+    }
+  }
+}
+
+.resultContent {
+  padding: 30px 100px;
+  text-align: center;
+  font-size: 20PX;
+  color: white;
+  font-family: 宋体;
+  table {
+    width: 100%;
+    thead {
+      td {
+        background: #1C86EE;
+      }
+    }
+    tbody {
+      td {
+        color: #000;
+      }
+    }
+  }
+  td {
+    width: 25%;
+    height: 50px;
+    background: #D1EEEE;
+    border: white solid 3px;
+  }
+}
+
+//peopleCount
+.listCount {
+  float: left;
+  height: 400px;
+  width: 50%;
+  li {
+    padding: 10px 20px;
+  }
+}
+
+.pageTitle {
+  color: #EE7621;
+  font-size: 30px;
+  padding-left: 20px;
+  text-decoration: none;
+  font-weight: 600;
+}

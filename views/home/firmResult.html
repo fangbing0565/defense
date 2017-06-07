@@ -1,0 +1,89 @@
+<div>
+    <nav class="navbar  navbar-static-top" role="navigation"
+         style="margin-bottom: 0;height: 120px;overflow: hidden;padding: 20px;">
+        <h1 class="pageTitle" style="text-align: center;color:#FF8C00;"> 考试成绩查询系统</h1>
+    </nav>
+    <div class="content" style="    overflow: hidden;
+    height: 450px;">
+        <div class="col-sm-12 col-xs-12 col-md-12 col-lg-12" style="height: 450px;    padding:0;">
+            <div class="searchChoice">
+                <div class="choiceBox" ui-sref="home.personResult">
+                    个人成绩查询
+                </div><div class="triangle-right-special"></div>
+            </div>
+            <div class="searchChoice" style="    margin-left: -163px;">
+                <div class="choiceBox" style="border-left: none;background: none;padding-left: 40px;padding-right: 0;">
+                    单位成绩查询
+                </div><div class="triangle-right" style="margin-left: -1px"></div>
+            </div>
+            <div class="resultList">
+                <div class="resultSearch">
+                    <div style="    display: flex;">
+                        <label class="control-label" for="province">省</label>
+                            <select data-ng-model="selectCurrentPro" class="form-control" id="province"  ng-change="selCity()"
+                                    ng-options="pro.ProID as pro.ProName for pro in province">
+                                <option value="">--请选择--</option>
+                            </select>
+                    </div>
+                    <div style="    display: flex;">
+                        <label class="control-label" for="city">市</label>
+                        <select data-ng-model="selectCurrentCity" class="form-control" id="city" ng-change="selCounty()"
+                                ng-options="c.CityID as c.CityName for c in city">
+                            <option value="">--请选择--</option>
+                        </select>
+                    </div>
+                    <div style="    display: flex;">
+                        <label class="control-label" for="county">县</label>
+                        <select data-ng-model="selectCurrentCounty" class="form-control" id="county"
+                                ng-options="cou.countyID as cou.countyName for cou in county">
+                            <option value="">--请选择--</option>
+                        </select>
+                    </div>
+                    <button style="background: #FF8C00;padding:5px  15px;">查询
+                    </button>
+                </div>
+                <div class="resultContent">
+                    <table>
+                        <thead>
+                        <tr>
+                            <td>姓名
+
+                            </td>
+                            <td>成绩
+
+                            </td>
+                            <td>考试时间
+
+                            </td>
+                            <td>备注
+
+                            </td>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>小明
+                            </td>
+                            <td>100
+                            </td>
+                            <td>2017年6月7日
+                            </td>
+                            <td>优秀
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="tips" style="float: right; padding: 30px;
+    font-size: 15px;
+    color: white;">
+        <button style="background: #FF8C00;padding:5px  15px;" ui-sref="home.searchResult">
+            返回
+        </button>
+    </div>
+
+</div>

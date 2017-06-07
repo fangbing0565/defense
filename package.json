@@ -1,0 +1,33 @@
+{
+  "name": "defense",
+  "version": "0.0.0",
+  "private": true,
+  "main": "server.js",
+  "devDependencies": {
+    "body-parser": "~1.10.2",
+    "express": "^4.13.4",
+    "method-override": "^2.1.3",
+    "morgan": "^1.1.1"
+  },
+  "dependencies": {
+    "angular": "~1.5.11",
+    "angular-bootstrap-datetimepicker": "^1.1.4",
+    "angular-cookies": "~1.5.11",
+    "angular-file-upload": "~2.5.x",
+    "angular-ui-bootstrap": "~2.5.0",
+    "angular-ui-router": "^0.3.1",
+    "bootstrap": "^3.3.7",
+    "bootstrap-social": "~5.1.x",
+    "datatables": "~1.10.x",
+    "echarts": "~3.5.x",
+    "eonasdan-bootstrap-datetimepicker": "~4.17.x",
+    "flag-icon-css": "~2.8.x",
+    "font-awesome": "~4.6.3",
+    "ionicons": "~2.0.x",
+    "holderjs": "~2.9.x",
+    "jquery": "~3.1.1",
+    "metismenu": "~2.7.x",
+    "oclazyload": "~1.1.x"
+  }
+}
+

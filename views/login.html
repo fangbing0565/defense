@@ -1,0 +1,59 @@
+<div>
+    <!--http://localhost/#/login-->
+    <!--   <nav class="navbar navbar-inverse navbar-static-top" role="navigation" style="margin-bottom: 0">
+
+           <div class="navbar-header">
+               <a class="navbar-brand" href="#">国防征兵考核信息系统
+               </a>
+           </div>
+
+       </nav>-->
+    <div style=" background-image: url('../images/loginBg.jpg');     min-width: 100%;
+    min-height: 100%;height: 663px; filter: alpha(opacity=40); opacity: .8 ;background-size: cover; margin-top:-1px; padding: 0">
+        <H1 style="       padding: 100px 50px 0 200px;  margin: 0 ; text-align: -webkit-center; ">
+            <img id="profile-img" class="profile-img-card" ng-src="../images/logo.png"/><SPAN
+                style="font-size: 60px;padding-left: 30px;font-family:'YouYuan ' ;color: #517a00">国防征兵考核信息系统</SPAN>
+        </H1>
+        <div class="container col-lg-12 col-sm-12 col-md-12">
+            <div class="card card-container">
+
+                <p id="profile-name" class="profile-name-card"></p>
+                <form id="userform" class="form-signin">
+                    <span id="reauth-email" class="reauth-email"></span>
+                    <div>
+                        <label for="inputUsername">身份证</label>
+                        <input type="text" id="inputUsername" ng-model="userForm.userName" class="form-control" required autofocus>
+                    </div> <div>
+                        <label for="inputUsername">密码</label>
+                    <input type="password" id="inputPassword" ng-model="userForm.userPwd" class="form-control" required>
+                    </div><div>
+                        <label for="inputUsername">用户类型</label>
+                    <select data-ng-model="selectCurrent" class="form-control"
+                            ng-options="user.id as user.name for user in selectUserType">
+                        <option value="">--点击选择--</option>
+                    </select>
+                    </div>
+
+
+                    <div id="remember" class="checkbox">
+                        <label style="color: #cecece">
+                            <!--<input type="checkbox" value="remember-me" ng-model="rememberLogin"> 记住登陆-->
+                        </label>
+                    </div>
+                    <div style="text-align: -webkit-center;color:#577f49">
+                        <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit" ng-click="loginUI(1)">
+                            登陆
+                        </button>
+                        <button class="btn btn-lg btn-primary  btn-signin" >
+                            取消
+                        </button>
+                    </div>
+                </form><!-- /form -->
+                <a ui-sref="recoverPwd" style="padding: 1rem;color:white;" class="forgot-password">
+                    忘记密码?
+                </a>
+                <!--<p><span>{{error.message}}</span></p>-->
+            </div><!-- /card-container -->
+        </div>
+    </div>
+</div>

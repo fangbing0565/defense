@@ -1,0 +1,26 @@
+<div>
+    <nav class="navbar  navbar-static-top" role="navigation"
+         style="margin-bottom: 0;height: 120px;overflow: hidden;padding: 20px;">
+        <h1 class="pageTitle" style="text-align: center">个人练习</h1>
+    </nav>
+    <hr style="width: 100%;color:#000080;border:solid 1px;  margin: 1px;    border-radius: 50%;">
+    <div class="content" style="    overflow: hidden;
+    height: 450px;">
+        <div class="col-sm-12 col-xs-12 col-md-12 col-lg-12" style="height: 450px;    padding: 120px 50px;">
+            <div class="menuBox col-sm-3 col-xs-3 col-md-3 col-lg-3" ng-repeat=" praMenu in praMenuList">
+                <img ng-src="{{praMenu.icon}}" alt="" ng-click="gotoTest(praMenu.type)" >
+                <div class="menuTest">
+                    <span>{{praMenu.name}}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="tips" style="float: right; padding: 30px;
+    font-size: 15px;
+    color: white;">
+       <button style="background: #FF8C00;padding:5px  15px;"  ui-sref="home.nav">
+           返回
+       </button>
+    </div>
+
+</div>

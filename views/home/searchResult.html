@@ -1,0 +1,36 @@
+<div>
+    <nav class="navbar  navbar-static-top" role="navigation"
+         style="margin-bottom: 0;height: 120px;overflow: hidden;padding: 20px;">
+        <h1 class="pageTitle" style="text-align: center">成绩查询</h1>
+        <div class="versionMes">
+            <ul>
+                <li>
+                    <label ><input type="radio"> 导入</label>
+                </li>
+                <li>
+                    <label><input type="radio"> 导出</label>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <hr style="width: 100%;color:#000080;border:solid 1px;  margin: 1px;    border-radius: 50%;">
+    <div class="content" style="    overflow: hidden;
+    height: 450px;">
+        <div class="col-sm-12 col-xs-12 col-md-12 col-lg-12" style="height: 450px;    padding: 120px 50px;">
+            <div class="menuBox col-sm-4 col-xs-4 col-md-4 col-lg-4" ng-repeat=" praMenu in praMenuList">
+                <img ng-src="{{praMenu.icon}}" alt="" ui-sref="{{praMenu.link}}">
+                <div class="menuTest">
+                    <span>{{praMenu.name}}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="tips" style="float: right; padding: 30px;
+    font-size: 15px;
+    color: white;">
+        <button style="background: #FF8C00;padding:5px  15px;" ui-sref="home.nav">
+            返回
+        </button>
+    </div>
+
+</div>

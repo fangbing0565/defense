@@ -1,0 +1,76 @@
+<div>
+    <nav class="navbar  navbar-static-top" role="navigation" style="margin-bottom: 0;height: 120px;overflow: hidden;">
+
+        <div class="navbar-header" style="padding: 30px">
+            <img src="/images/logo.png" style="width: 70px;" alt="">
+            <a class="pageTitle" href="#">国防征兵考核信息系统
+            </a>
+        </div>
+        <div class="personMes">
+            <div>
+                用户：张鹏
+            </div>
+            <div>
+                角色：考核学员
+            </div>
+            <div>
+                单位：XXXXXXXX
+            </div>
+        </div>
+        <div class="versionMes">
+            <ul>
+                <li>
+                    <label><input type="radio"> 软件升级</label>
+                </li>
+                <li>
+                    <label><input type="radio"> 关于我们</label>
+                </li>
+            </ul>
+        </div>
+
+
+    </nav>
+    <hr style="width: 100%;color:#000080;border:solid 1px;  margin: 1px;">
+    <div class="content" style="    overflow: hidden;
+    height: 450px;">
+        <div class="col-sm-8 col-xs-8 col-md-8 col-lg-8" style="height: 450px;    padding: 30px 50px;">
+            <div class="menuBox col-sm-3 col-xs-3 col-md-3 col-lg-3" ng-repeat=" menu in meauList">
+                <div ng-if="!menu.type">
+                    <img ng-src="{{menu.icon}}" alt="" ui-sref="{{menu.link}}">
+                    <div class="menuTest">
+                        <span>{{menu.name}}</span>
+                    </div>
+                </div>
+                <div ng-if="menu.type">
+                    <img ng-src="{{menu.icon}}" alt="" ng-click="gotoTest(menu.type)" >
+                    <div class="menuTest">
+                        <span>{{menu.name}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-4 col-xs-4 col-md-4 col-lg-4" style="border-left:#000080 solid 1px;height: 450px">
+            <h2 style="text-align: -webkit-center;
+    color: white;
+    font-size: 25px;font-family: 宋体;
+">最新资讯</h2>
+            <div>
+                <ul>
+                    <li ng-repeat=" news in newsList" style=" list-style: none;">
+                        <label><input type="radio"> <span
+                                style="    font-size: 12px;font-weight: 300;color: white;font-family: 宋体;"> {{news.name}}</span></label>
+
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+    <hr style="width: 100%;color:#000080;border:solid 1px;  opacity: 0.3;  margin: 1px;">
+    <div class="tips" style="    padding: 30px;
+    font-size: 15px;
+    color: white;">
+        试用版： 17天
+    </div>
+</div>

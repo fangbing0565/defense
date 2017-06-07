@@ -1,0 +1,130 @@
+<div>
+    <nav class="testNav">
+        <h2 class="pageTitle" style="float: left;margin: 0">国防征兵考核 <span>{{currentTestType.name}}</span></h2>
+
+        <button style="    margin-right: 50px;float: right;color: #A0522D;background: #EEAD0E" data-toggle="modal" class="btn btn-primary"
+                data-target="#submitTest"><img src="/images/submit.png" alt="">
+            交卷
+        </button>
+        <div style="float: right;margin-right: 40px;">
+            <img style="    background: white;z-index:1;border: #1296db solid 1px;
+    width: 40px;
+    border-radius: 50%;
+    padding: 3%;
+    " src="/images/alarm.png" alt="">
+            <span style="font-weight: 600;background: white;border: #1296db solid 1px;border-left: none; margin-left: -10px;box-shadow:1px 1px 1px  #1C86EE;   padding: 5px 5px 5px 15px;border-radius: 0 4px 4px 0">
+         {{'00'}}：{{minuteTime}}：{{secondTime}}
+     </span>
+        </div>
+
+    </nav>
+    <div>
+        <div class="col-sm-9 col-md-9 col-xs-9 col-lg-9 testContent" style="  padding: 0;">
+            <p>当前位置 <span>一共40题，当前第{{currentRatio}}题</span> <span>({{currentType}} 第{{currentRatio}}题)</span></p>
+            <div class="question">
+                {{currentRatio}}、 {{currentQuestion}}（）
+            </div>
+            <hr>
+            <div class="answerChoice">
+                <ul>
+                    <li ng-repeat="choice in currentChioce" style="list-style: none">
+                       <input ng-model="choice[2].checked"  ng-change="selectOnly(currentType,choice)" type="checkbox" id="testChoice{{choice.id}}"> <label  style="font-weight: 500" for="testChoice{{choice.id}}">  {{choice[0]}}、{{choice[1]}}</label>
+
+                    </li>
+                </ul>
+            </div>
+            <div class="testFooter ">
+                <div>
+                    <button  ng-click="chooseRatio(currentRatio,currentType,'testCheck')" style="background: #1296db;"><img src="/images/check.png" style="    width: 20px;
+    background: #1296db;" alt=""> 待查
+                    </button>
+                    <button style="background: #1296db" ng-click="chooseRatio(currentRatio-1,currentType)"><img
+                            src="/images/prePage.png" style="    width: 20px;
+    background: #1296db;" alt=""> 上一题
+                    </button>
+                    <button style="background: #1296db" ng-click="chooseRatio(currentRatio+1,currentType)">下一题 <img
+                            src="/images/prePage.png" style="-webkit-transform: rotate(180deg);width: 20px;
+    background: #1296db;" alt=""></button>
+                </div>
+                <div ng-if="testType!='official'">
+                    <button style="background: #71C671">
+                        答案解析
+                    </button>
+                    <button style="background: #EEB422">
+                        收藏本题
+                    </button>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-sm-3 col-md-3 col-xs-3 col-lg-3 testMessage" style=" padding: 0;">
+            <h5 style="background: #bfbfbf;margin: 0;">
+
+            </h5>
+            <h3 style="margin: 0;padding: 5px"><img src="/images/answer.png" alt=""><span style="padding: 10px;font-size: 20PX;COLOR: white;">答题卡</span></h3>
+            <div style="height: 110px">
+                <h5>单选题</h5>
+                <div class="questionList">
+                    <a href="" ng-repeat="ratio in RatioExamination track by $index" ng-class="ratio.bg"
+                       ng-click="chooseRatio(ratio.id,'RatioExamination')">{{ratio.id}}</a>
+                </div>
+            </div>
+            <div style="height: 110px">
+            <h5>多选题</h5>
+                <div class="questionList">
+                    <a href="" ng-repeat="ratio in multipleChoice track by $index" ng-class="ratio.bg"
+                       ng-click="chooseRatio(ratio.id,'multipleChoice')">{{ratio.id}}</a>
+                </div>
+            </div>
+            <div style="height: 110px">
+            <h5>判断题</h5>
+                <div class="questionList">
+                    <a href="" ng-repeat="ratio in judgment track by $index" ng-class="ratio.bg"
+                       ng-click="chooseRatio(ratio.id,'judgment')">{{ratio.id}}</a>
+                </div>
+            </div>
+            <div style="height: 110px">
+            <h5></h5>
+                <img style=" float: right;    width: 60px;
+    margin-right: 10px;" src="/images/identity.png" alt="">
+
+                <div>
+                    <div style="padding-top: 30px">姓名：{{'帐篷'}}</div>
+                    <div>证件号：{{'342601199344444444'}}</div>
+                </div>
+            </div>
+            <div class="bottomState">
+                <div class="col-lg-6 col-md-6 stateBox">
+                    当前： <span style="background-color: greenyellow;"></span>
+                </div>
+                <div class="col-lg-6 col-md-6 stateBox">
+                    未做： <span style="background-color: white"></span>
+                </div>
+                <div class="col-lg-6 col-md-6 stateBox">
+                    待查： <span style="	background: #EE7621"></span>
+                </div>
+                <div class="col-lg-6 col-md-6 stateBox">
+                    已做： <span style="	background: #71C671"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="submitTest" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h4 id="deleteDeviceType">确认提交？</h4>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn" data-dismiss="modal" aria-hidden="true">取消</button>
+                    <button class="btn btn-primary" data-dismiss="modal" aria-hidden="true"
+                            ng-click="submitTest()">确认
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
